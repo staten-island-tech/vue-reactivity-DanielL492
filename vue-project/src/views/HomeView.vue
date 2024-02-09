@@ -30,6 +30,7 @@ const targets = [
   { name: "Talal", image: "image19.jpg" },
   { name: "Abu'l Nuqoud", image: "image20.jpg" }
 ];
+
 </script>
 
 <style scoped>
