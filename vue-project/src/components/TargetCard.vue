@@ -1,14 +1,10 @@
 <template>
-    <div>
-     <div class="flexcontainer">
         <div id="card">
          <h1>{{ Target.name }}</h1>
          <img :src="Target.img" alt="">
 <!--          <h2>{{ clicked }}</h2> -->
 <!--         <button @click="increment">Click ME</button> -->
-        </div>
-     </div>  
-    </div>
+        </div> 
 </template>
 
 <script setup>
@@ -29,11 +25,7 @@ img {
     height:300px;
     object-fit:cover;
 }
-.flexcontainer {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-around;
-}
+
 #card {
     display: flex;
     flex-wrap: wrap;

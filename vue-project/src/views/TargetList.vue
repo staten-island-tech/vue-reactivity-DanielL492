@@ -1,13 +1,16 @@
 <template>
     <div>
-        <DestCard v-for="target in targets" 
+        <TargetCard v-for="target in targets" 
     :key="target.name" 
     :Target="target"/>
+    <input type="submit" value="Click to Play Game" id="submit">
+    <h3 id="h33"></h3>
+    <div id="flexcontainer"></div>
     </div>
 </template>
 
 <script setup>
-import DestCard from "@/components/DestCard.vue"
+import TargetCard from "@/components/TargetCard.vue"
 const targets = [
   { name: "Templar Grand Master Robert de Sablé", image: "image1.jpg" },
   { name: "Al Mualim", image: "image2.jpg" },
@@ -29,34 +32,10 @@ const targets = [
   { name: "Sibrand", image: "image18.jpg" },
   { name: "Abu'l Nuqoud", image: "image20.jpg" }
 ];
+
+
 </script>
 
 <style scoped>
-img {
-    width:250px;
-    height:300px;
-    object-fit:cover;
-}
-.flexcontainer {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-around;
-}
-#card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgba(110, 110, 241, 0.774);
-    width: 15vw;
-    height: 43vh;
-    font-size: 1rem;
-    border-radius: 15px;
-    padding-top:3vh;
-    padding-bottom: 3vh;
-    margin: 7.5vh;
-    box-shadow: 10px 10px;
-   }
 
 </style>
