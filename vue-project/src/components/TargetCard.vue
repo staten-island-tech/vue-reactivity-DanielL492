@@ -1,7 +1,7 @@
 <template>
         <div id="card">
          <h1>{{ Target.name }}</h1>
-         <img :src="Target.img" alt="">
+         <img :src="Target.img" alt="" class="card-img">
 <!--          <h2>{{ clicked }}</h2> -->
 <!--         <button @click="increment">Click ME</button> -->
         </div> 
@@ -20,10 +20,10 @@ const props = defineProps({
 </script>
 
 <style scoped>
-img {
-    width:250px;
-    height:300px;
-    object-fit:cover;
+.card-img {
+    width:200px;
+    height:250px;
+    align-items: center;
 }
 
 #card {
@@ -33,13 +33,14 @@ img {
     align-items: center;
     flex-direction: column;
     background-color: rgba(110, 110, 241, 0.774);
-    width: 15vw;
-    height: 43vh;
+    width: 25vw;
+    height: 45vh;
     font-size: 1rem;
     border-radius: 15px;
     padding-top:3vh;
     padding-bottom: 3vh;
     margin: 7.5vh;
     box-shadow: 10px 10px;
+    text-align: center;
    }
 </style>
