@@ -5,7 +5,6 @@
     :Target="target"/>
     <input type="submit" value="Click to Play Game" id="submit">
     <h3 id="h33"></h3>
-    <div id="flexcontainer"></div>
     </div>
 </template>
 

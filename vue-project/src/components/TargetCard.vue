@@ -33,7 +33,7 @@ const props = defineProps({
     align-items: center;
     flex-direction: column;
     background-color: rgba(110, 110, 241, 0.774);
-    width: 25vw;
+    width: 22.5vw;
     height: 45vh;
     font-size: 1rem;
     border-radius: 15px;
