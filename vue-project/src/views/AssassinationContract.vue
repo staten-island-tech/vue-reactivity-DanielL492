@@ -31,9 +31,9 @@ const targets = [
   { name: "Abu'l Nuqoud", image: "image20.jpg" }
 ];
 
-function insertimg(arr) {
+/*function insertimg(arr) {
     console.log(arr);
-    /*arr.forEach((arr) =>*/ .insertAdjacentHTML("beforeend",
+    //arr.forEach((arr) => DOMSelectors.container.insertAdjacentHTML("beforeend",
     `<div class="flexcontainer">
       <div class="card" id="${arr.num}">
         <img src="${arr.img}" alt="Image of ${arr.name}" class="card-img"/> <br>
@@ -129,7 +129,7 @@ function clearcards() {
         DOMSelectors.answer = document.getElementById("hello")
         clearcards();
       }}))
-})
+})*/
 </script>
 
 <style scoped>

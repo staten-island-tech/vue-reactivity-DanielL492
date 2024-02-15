@@ -1,19 +1,20 @@
 <template>
-        <div id="card">
+        <div id={{ Target.name }}>
          <h1>{{ Target.name }}</h1>
          <img :src="Target.img" alt="" class="card-img">
-<!--          <h2>{{ clicked }}</h2> -->
-<!--         <button @click="increment">Click ME</button> -->
+         <h2>{{ clicked }}</h2> 
+         <button @click="increment">Assassinate</button> 
         </div> 
 </template>
 
 <script setup>
-/* import {ref} from "vue";
+//import {ref} from "vue";
+let dead = [];
 //clicker logic
-const clicked = ref(0);
+//const clicked = ref(0);
 function increment(){
-    clicked.value++;
-}  */
+    dead.push();
+}  
 const props = defineProps({
     Target: Object, 
 });
