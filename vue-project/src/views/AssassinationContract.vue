@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flexcontainer">
+    <div :ref="heythere" class="flexcontainer">
     <TargetCard v-for="target in targets" 
     :key="target.name" 
     :Target="target"/></div>
@@ -30,6 +30,16 @@ const targets = [
   { name: "Sibrand", image: "image18.jpg" },
   { name: "Abu'l Nuqoud", image: "image20.jpg" }
 ];
+
+import { ref } from "vue";
+export default: {
+  setup(): {
+    const heythere = ref(null);
+    return {
+      heythere,
+    };
+  },
+};
 
 /*function insertimg(arr) {
     console.log(arr);
