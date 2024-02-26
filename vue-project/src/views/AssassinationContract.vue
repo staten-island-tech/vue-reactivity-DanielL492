@@ -31,16 +31,6 @@ const targets = [
   { name: "Abu'l Nuqoud", image: "image20.jpg" }
 ];
 
-import { ref } from "vue";
-export default: {
-  setup(): {
-    const heythere = ref(null);
-    return {
-      heythere,
-    };
-  },
-};
-
 /*function insertimg(arr) {
     console.log(arr);
     //arr.forEach((arr) => DOMSelectors.container.insertAdjacentHTML("beforeend",
