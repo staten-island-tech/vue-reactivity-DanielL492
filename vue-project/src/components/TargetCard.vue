@@ -1,86 +1,51 @@
+
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
+  <div id={{ Target.name }}>
+   <h1>{{ Target.name }}</h1>
+   <img :src="Target.img" alt="" class="card-img">
+   <h2>{{ clicked }}</h2>
+   <button @click="increment">Assassinate</button>
   </div>
 </template>
 
+
+<script setup>
+//import {ref} from "vue";
+let dead = [];
+//clicker logic
+//const clicked = ref(0);
+function increment(){
+dead.push();
+}  
+const props = defineProps({
+Target: Object,
+});
+</script>
+
+
 <style scoped>
-.item {
-  margin-top: 2rem;
-  display: flex;
-  position: relative;
+.card-img {
+width:200px;
+height:250px;
+align-items: center;
 }
 
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
 
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
-
-  .item:first-of-type:before {
-    display: none;
-  }
-
-  .item:last-of-type:after {
-    display: none;
-  }
+#card {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+flex-direction: column;
+background-color: rgba(110, 110, 241, 0.774);
+width: 22.5vw;
+height: 45vh;
+font-size: 1rem;
+border-radius: 15px;
+padding-top:3vh;
+padding-bottom: 3vh;
+margin: 7.5vh;
+box-shadow: 10px 10px;
+text-align: center;
 }
 </style>
