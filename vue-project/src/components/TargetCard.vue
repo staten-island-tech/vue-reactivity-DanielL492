@@ -13,8 +13,9 @@ import {ref} from "vue";
 let dead = [];
 //clicker logic
 const clicked = ref(0);
-function increment(){
-dead.push();
+function increment(element){
+dead.push(element.id);
+console.log(dead)
 }  
 const props = defineProps({
 Target: Object,
