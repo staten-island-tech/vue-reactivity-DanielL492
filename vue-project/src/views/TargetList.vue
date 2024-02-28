@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TargetCard v-for="target in targets"
+    <TargetCard v-for="target in targets"
     :key="target.name"
     :Target="target"/>
     <input type="submit" value="Click to Play Game" id="submit">

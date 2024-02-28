@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :ref="heythere" class="flexcontainer">
+    <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
     :Target="target"/></div>
