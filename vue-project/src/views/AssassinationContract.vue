@@ -3,7 +3,8 @@
     <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
-    :Target="target"/></div>
+    :Target="target"/>
+    </div>
   </div>
 </template>
 
@@ -146,13 +147,19 @@ function clearcards() {
 <style scoped>
 
 
-.flexcontainer {
+/*.flexcontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
+}*/
 
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 h1 {
   color: red;
