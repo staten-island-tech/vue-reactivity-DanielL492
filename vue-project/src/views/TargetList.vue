@@ -1,6 +1,8 @@
 <template>
-      <TargetCard v-for="target in targets"
-      :Target="target"/>
+      <div class="flexcontainer">
+            <TargetCard v-for="target in targets"
+            :Target="target"/>
+      </div>
 </template>
 
 
