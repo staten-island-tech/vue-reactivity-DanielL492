@@ -16,5 +16,15 @@ import { targets } from "@/stores/counter.js";
 
 <style scoped>
 
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+h1 {
+  color: red;
+}
 
 </style>

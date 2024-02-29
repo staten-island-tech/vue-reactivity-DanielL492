@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div class="flexcontainer">
+    <button id="choose">Click to Receive Contract</button>
+<!--     <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
     :Target="target"/>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -13,7 +14,13 @@
 import TargetCard from "@/components/TargetCardTwo.vue"
 import { targets } from "@/stores/counter.js";
 
-
+function selectedParent(arr){
+  let target = arr.target;
+  let parent = target.parentElement;//parent of "target"
+  let hi2 = Number(parent.id);
+  console.log(hi2)
+  return(hi2);
+}
 
 /*function insertimg(arr) {
     console.log(arr);
