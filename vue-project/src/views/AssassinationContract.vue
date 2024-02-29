@@ -11,7 +11,7 @@
 
 
 <script setup>
-import TargetCard from "@/components/TargetCardTwo.vue"
+import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 
 function selectedParent(arr){
