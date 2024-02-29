@@ -9,20 +9,6 @@
 
 
 <script setup>
-import {ref} from "vue";
-//clicker logic
-const clicked = ref(0);
-
-function selectedParent(arr){
-  let target = arr.target;
-  let parent = target.parentElement;//parent of "target"
-  let hi2 = Number(parent.id);
-  console.log(hi2)
-  return(hi2);
-}
-
-let hi = 0;
-
 function increment(){
   props.Target.dead.value = true;
   console.log(props.Target.dead.value)
