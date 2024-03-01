@@ -12,11 +12,9 @@
 
 <script setup>
 import TargetCard from "@/components/TargetCard.vue"
-//import { targets } from "@/stores/counter.js";
+import { targets } from "@/stores/counter.js";
 
-const props = defineProps({
-Target: Object,
-});
+const props = {targets}
 
 function givecontract(arr) {
 
@@ -45,7 +43,7 @@ function givecontract(arr) {
   let randtext = getRandomInt(0, 8)
   let rand2 = getRandomInt(0, 8);
   let rand3 = getRandomInt(0, 8);
-  while (props.Target.dead.value == true) {
+  while (props.targets.dead.value == true) {
       randtext = getRandomInt(0, 8);
   }
   let rand1 = arr[randtext];
@@ -53,7 +51,7 @@ function givecontract(arr) {
   //wait.push(rand1)
   history.push(randtext);
   while (history.includes(rand2)) {
-    while (props.Target.dead.value == true) {
+    while (props.targets.dead.value == true) {
       rand2 = getRandomInt(0, 8);
     }
   }
@@ -62,7 +60,7 @@ function givecontract(arr) {
   //wait.push(newarr2)
   insertthing(newarr2)
   while (history.includes(rand3)) {
-    while (props.Target.dead.value == true) {
+    while (props.targets.dead.value == true) {
       rand3 = getRandomInt(0, 8); }
   }
   history.push(rand3);
