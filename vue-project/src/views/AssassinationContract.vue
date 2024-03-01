@@ -22,7 +22,7 @@
 
 
 <script setup>
-import TargetCard from "@/components/TargetCard.vue"
+//import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 
 import {ref} from "vue"
@@ -76,6 +76,8 @@ function givecontract(arr) {
   }
 
 pick(arr);
+
+showCard = false;
 
 }
 
