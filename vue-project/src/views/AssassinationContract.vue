@@ -14,14 +14,6 @@
 import TargetCard from "@/components/TargetCard.vue"
 //import { targets } from "@/stores/counter.js";
 
-function selectedParent(arr){
-  let target = arr.target;
-  let parent = target.parentElement;//parent of "target"
-  let hi2 = Number(parent.id);
-  console.log(hi2)
-  return(hi2);
-}
-
 const props = defineProps({
 Target: Object,
 });
@@ -29,7 +21,7 @@ Target: Object,
 function givecontract(arr) {
 
   let history = []
-  let wait = []
+  //let wait = []
   let hi = 0;
 
   function insertthing() {
@@ -58,7 +50,7 @@ function givecontract(arr) {
   }
   let rand1 = arr[randtext];
   insertthing(rand1)
-  wait.push(rand1)
+  //wait.push(rand1)
   history.push(randtext);
   while (history.includes(rand2)) {
     while (props.Target.dead.value == true) {
@@ -67,21 +59,22 @@ function givecontract(arr) {
   }
   history.push(rand2)
   let newarr2 = arr[rand2];
-  wait.push(newarr2)
+  //wait.push(newarr2)
   insertthing(newarr2)
   while (history.includes(rand3)) {
     while (props.Target.dead.value == true) {
-      rand3 = getRandomInt(1, 36); }
+      rand3 = getRandomInt(0, 8); }
   }
   history.push(rand3);
   let newarr3 = arr[rand3];
   insertthing(newarr3)
-  wait.push(newarr3)
+  //wait.push(newarr3)
   console.log(history)
-  let newtext = wait[getRandomInt(0, wait.length)];
-  hi = newtext.num;
+  /*let newtext = wait[getRandomInt(0, wait.length)];
+  insertthing(newtext)
+  hi = newtext.num;*/
   history.splice(0, history.length);
-  wait.splice(0, wait.length);
+  //wait.splice(0, wait.length);
   return(hi);
 }  
 
