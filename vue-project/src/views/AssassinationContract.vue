@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="choose">Click to Receive Contract</button>
+    <button id="choose" @click="givecontract(TargetCard)" >Click to Receive Contract</button>
 <!--     <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
@@ -12,7 +12,7 @@
 
 <script setup>
 import TargetCard from "@/components/TargetCard.vue"
-import { targets } from "@/stores/counter.js";
+//import { targets } from "@/stores/counter.js";
 
 function selectedParent(arr){
   let target = arr.target;
@@ -22,7 +22,74 @@ function selectedParent(arr){
   return(hi2);
 }
 
-/*function insertimg(arr) {
+const props = defineProps({
+Target: Object,
+});
+
+function givecontract(arr) {
+
+  let history = []
+  let wait = []
+  let hi = 0;
+
+  function insertthing() {
+    console.log(arr);
+    `<div class="flexcontainer">
+      <div class="card" id="${arr.num}">
+        <h3 class="name">${arr.name}</h3>
+        <img src="${arr.img}" alt="Image of ${arr.name}" class="card-img"/> <br>
+        <button type="button" class="answer" id="${arr.num}" >Answer</button>
+      </div>
+    </div>`
+  }
+  
+  function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+  function pick() {
+  let randtext = getRandomInt(0, 8)
+  let rand2 = getRandomInt(0, 8);
+  let rand3 = getRandomInt(0, 8);
+  while (props.Target.dead.value == true) {
+      randtext = getRandomInt(0, 8);
+  }
+  let rand1 = arr[randtext];
+  insertthing(rand1)
+  wait.push(rand1)
+  history.push(randtext);
+  while (history.includes(rand2)) {
+    while (props.Target.dead.value == true) {
+      rand2 = getRandomInt(0, 8);
+    }
+  }
+  history.push(rand2)
+  let newarr2 = arr[rand2];
+  wait.push(newarr2)
+  insertthing(newarr2)
+  while (history.includes(rand3)) {
+    while (props.Target.dead.value == true) {
+      rand3 = getRandomInt(1, 36); }
+  }
+  history.push(rand3);
+  let newarr3 = arr[rand3];
+  insertthing(newarr3)
+  wait.push(newarr3)
+  console.log(history)
+  let newtext = wait[getRandomInt(0, wait.length)];
+  hi = newtext.num;
+  history.splice(0, history.length);
+  wait.splice(0, wait.length);
+  return(hi);
+}  
+
+pick(arr);
+
+}
+
+/*function insertthing(arr) {
     console.log(arr);
     //arr.forEach((arr) => DOMSelectors.container.insertAdjacentHTML("beforeend",
     `<div class="flexcontainer">
@@ -34,7 +101,7 @@ function selectedParent(arr){
   )}
 
 
-function inserttext(arr) {
+function (arr) {
   console.log(arr);
   DOMSelectors.container.insertAdjacentHTML("beforeend",
   `<div class="flexcontainer">
@@ -63,7 +130,7 @@ function pick(arr) {
   let rand2 = getRandomInt(1, 36);
   let rand3 = getRandomInt(1, 36);
   let rand1 = arr[randtext];
-  insertimg(rand1)
+  insertthing(rand1)
   wait.push(rand1)
   history.push(randtext);
   while (history.includes(rand2)) {
@@ -72,17 +139,17 @@ function pick(arr) {
   history.push(rand2)
   let newarr2 = arr[rand2];
   wait.push(newarr2)
-  insertimg(newarr2)
+  insertthing(newarr2)
   while (history.includes(rand3)) {
     rand3 = getRandomInt(1, 36);
   }
   history.push(rand3);
   let newarr3 = arr[rand3];
-  insertimg(newarr3)
+  insertthing(newarr3)
   wait.push(newarr3)
   console.log(history)
   let newtext = wait[getRandomInt(0, wait.length)];
-  inserttext(newtext)
+  (newtext)
   hi = newtext.num;
   history.splice(0, history.length);
   wait.splice(0, wait.length);
