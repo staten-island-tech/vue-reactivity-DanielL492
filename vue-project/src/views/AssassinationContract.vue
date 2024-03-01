@@ -13,8 +13,6 @@
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of' + item.name" class="card-img"/> <br>
-          <button @click="increment">Assassinate</button> 
-          <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead.value == true">
         </div>
       </div>
     </div>
