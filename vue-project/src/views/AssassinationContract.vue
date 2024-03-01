@@ -13,7 +13,8 @@
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of' + item.name" class="card-img"/> <br>
-          <button type="button" class="answer" :id="item.num" >Answer</button>
+          <button @click="increment">Assassinate</button> 
+          <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead.value == true">
         </div>
       </div>
     </div>
@@ -22,7 +23,7 @@
 
 
 <script setup>
-//import TargetCard from "@/components/TargetCard.vue"
+import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 
 import {ref} from "vue"
