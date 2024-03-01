@@ -1,11 +1,22 @@
 <template>
   <div>
-    <button id="choose" @click="givecontract(TargetCard)" >Click to Receive Contract</button>
+      <button id="choose" @click="givecontract(targets)" >Click to Receive Contract</button>
+      <div id="flexcontainer" ref="submit"></div>
 <!--     <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
     :Target="target"/>
     </div> -->
+
+    <div v-if="showCard == true">
+      <div class="flexcontainer" v-for="item in array">
+        <div class="card" :id="item.num">
+          <h3 class="name">{{ item.name }}</h3>
+          <img :src="item.img" :alt="'Image of' + item.name" class="card-img"/> <br>
+          <button type="button" class="answer" :id="item.num" >Answer</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,67 +25,55 @@
 import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 
-const props = {targets}
+import {ref} from "vue"
+const showCard = ref(false);
+const array = ref([]);
 
 function givecontract(arr) {
 
-  let history = []
-  //let wait = []
+  showCard.value = true;
+  let history = [];
   let hi = 0;
-
-  function insertthing() {
-    console.log(arr);
-    `<div class="flexcontainer">
-      <div class="card" id="${arr.num}">
-        <h3 class="name">${arr.name}</h3>
-        <img src="${arr.img}" alt="Image of ${arr.name}" class="card-img"/> <br>
-        <button type="button" class="answer" id="${arr.num}" >Answer</button>
-      </div>
-    </div>`
-  }
   
   function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min);
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
   function pick() {
-  let randtext = getRandomInt(0, 8)
-  let rand2 = getRandomInt(0, 8);
-  let rand3 = getRandomInt(0, 8);
-  while (props.targets.dead.value == true) {
-      randtext = getRandomInt(0, 8);
-  }
-  let rand1 = arr[randtext];
-  insertthing(rand1)
-  //wait.push(rand1)
-  history.push(randtext);
-  while (history.includes(rand2)) {
-    while (props.targets.dead.value == true) {
-      rand2 = getRandomInt(0, 8);
+    let randtext = getRandomInt(0, 18);
+    let rand2 = getRandomInt(0, 18);
+    let rand3 = getRandomInt(0, 18);
+
+    while (targets.dead == true) {
+      randtext = getRandomInt(0, 18);
     }
+
+    let rand1 = arr[randtext];
+    array.value.push(arr[randtext]);
+    history.push(randtext);
+
+    while (history.includes(rand2)) {
+      while (targets.dead == true) {
+        rand2 = getRandomInt(0, 18);
+      }
+    }
+
+    history.push(rand2)
+    array.value.push(arr[rand2]);
+    while (history.includes(rand3)) {
+      while (targets.dead == true) {
+        rand3 = getRandomInt(0, 18);
+      }
+    }
+
+    history.push(rand3);
+    array.value.push(arr[rand3]);
+    history.splice(0, history.length);
+    arr.length = 0;
+    return (hi);
   }
-  history.push(rand2)
-  let newarr2 = arr[rand2];
-  //wait.push(newarr2)
-  insertthing(newarr2)
-  while (history.includes(rand3)) {
-    while (props.targets.dead.value == true) {
-      rand3 = getRandomInt(0, 8); }
-  }
-  history.push(rand3);
-  let newarr3 = arr[rand3];
-  insertthing(newarr3)
-  //wait.push(newarr3)
-  console.log(history)
-  /*let newtext = wait[getRandomInt(0, wait.length)];
-  insertthing(newtext)
-  hi = newtext.num;*/
-  history.splice(0, history.length);
-  //wait.splice(0, wait.length);
-  return(hi);
-}  
 
 pick(arr);
 
