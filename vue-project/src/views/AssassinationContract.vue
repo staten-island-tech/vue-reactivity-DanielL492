@@ -85,6 +85,8 @@ function kill() {
   document.querySelector("#hi").textContent = "You have assassinated that target.";
   console.log(array)
   console.log("hi")
+  document.querySelector("#choose").value = " ";
+  console.log("hey")
 }
 
 
