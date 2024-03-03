@@ -81,7 +81,7 @@ pick(arr);
 
 function kill(button) {
   showCard.value = false;
-  document.querySelector("#choose").style.display = "";
+  //document.querySelector("#choose").style.display = "";
   document.querySelector("#hi").style.display = "";
   history.length = 0;
   function selectedProduct(arr){
@@ -91,7 +91,7 @@ function kill(button) {
   return(hi2);
   }
   console.log(array);
-  //array.value = 0;
+  array.value = 0;
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log("hey")
   deadlist.push(selectedProduct(button))
