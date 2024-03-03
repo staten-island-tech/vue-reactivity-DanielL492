@@ -30,10 +30,9 @@ import {history} from "@/stores/counter.js";
 
 
 function givecontract(arr) {
-  document.querySelector("#choose").remove();
-
-  array = ref([]);
   showCard.value = true;
+  document.querySelector("#choose").style.display = "none";
+  document.querySelector("#hi").style.display = "none";
   let hi = 0;
   
   function getRandomInt(min, max) {
@@ -74,38 +73,33 @@ function givecontract(arr) {
     history.push(rand3);
     console.log(history);
     array.value.push(arr[rand3]);
+    console.log(array);
     return (hi);
   }
 pick(arr);
-
-//showCard = false;
-
 } 
 
 function kill(button) {
+  showCard.value = false;
+  document.querySelector("#choose").style.display = "";
+  document.querySelector("#hi").style.display = "";
   history.length = 0;
   function selectedProduct(arr){
   let target = arr.target;
   let parent = target.parentElement;//parent of "target"
   let hi2 = Number(parent.id);
-  console.log(hi2)
   return(hi2);
-}
-
+  }
   console.log(array);
-  array.value = 0;
+  //array.value = 0;
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
-  console.log(array)
   console.log("hey")
   deadlist.push(selectedProduct(button))
-  console.log(deadlist);
   let i = 0;
   for (i = 0; i < targets.length; i++) {
     if ( targets[i].num == selectedProduct(button)) {
     targets[i].dead = true;
-    console.log(targets[i])
     }}
-  console.log(targets)
   }
 </script>
 
