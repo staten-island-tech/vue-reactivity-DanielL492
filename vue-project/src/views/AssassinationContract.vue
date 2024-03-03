@@ -95,9 +95,10 @@ function kill(button) {
   console.log("hey")
   dead.push(selectedProduct(button))
   console.log(dead);
-  if ( targets.num == button.id) {
-    targets.dead = true;
-  }
+  for (i = 0; i <= targets.length; i++) {
+    if ( targets.num == button.id) {
+    targets[i].dead = true;
+    }}
 }
 
 
