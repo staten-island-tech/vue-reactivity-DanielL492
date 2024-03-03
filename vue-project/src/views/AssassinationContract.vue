@@ -75,7 +75,6 @@ function givecontract(arr) {
     history.push(rand3);
     console.log(history);
     array.value.push(arr[rand3]);
-    history.splice(0, history.length);
     return (hi);
   }
 pick(arr);
@@ -85,7 +84,7 @@ pick(arr);
 } 
 
 function kill(button) {
-
+  history.length = 0;
   function selectedProduct(arr){
   let target = arr.target;
   let parent = target.parentElement;//parent of "target"
@@ -110,7 +109,6 @@ function kill(button) {
   console.log(targets)
   }
 </script>
-
 
 <style scoped>
 

@@ -10,7 +10,7 @@
 
 <script setup>
 function increment(){
-  props.Target.dead.value = true;
+  props.Target.dead = true;
   console.log(props.Target.dead.value)
 }  
 const props = defineProps({
