@@ -8,6 +8,7 @@
 
 
 <script setup>
+import {targets} from "@/stores/"
 
 const props = defineProps({
 Target: Object,

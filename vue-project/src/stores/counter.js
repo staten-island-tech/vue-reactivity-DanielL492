@@ -30,4 +30,4 @@ export const targets = reactive([
   { name: "Abu'l Nuqoud", image: "image20.jpg", dead:  false, num: 18, }
 ]);
 
-export let dead = reactive([])
+export let deadlist = reactive([])
