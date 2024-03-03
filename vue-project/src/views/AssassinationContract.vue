@@ -12,7 +12,7 @@
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of' + item.name" class="card-img"/> <br>
-          <button @click="kill">Assassinate</button>
+          <button :id="item.num" @click="kill">Assassinate</button>
         </div>
       </div>
     </div>
@@ -79,14 +79,17 @@ pick(arr);
 
 } 
 
-function kill() {
+function kill(arr) {
   console.log(array);
   array.value = 0;
-  document.querySelector("#hi").textContent = "You have assassinated that target.";
+  document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log(array)
   console.log("hi")
-  document.querySelector("#choose").value = " ";
+  document.querySelector("#choose").remove();
   console.log("hey")
+  if( targets.num == arr.id) {
+    targets.dead.value = true;
+  }
 }
 
 
