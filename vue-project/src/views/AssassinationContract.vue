@@ -24,11 +24,13 @@
 import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 
+
 import {ref} from "vue"
 let showCard = ref(false);
 let array = ref([]);
 
 function givecontract(arr) {
+  document.querySelector("#choose").remove();
 
   array = ref([]);
   showCard.value = true;
@@ -49,8 +51,6 @@ function givecontract(arr) {
     while (targets.dead == true) {
       randtext = getRandomInt(0, 18);
     }
-
-    let rand1 = arr[randtext];
     array.value.push(arr[randtext]);
     history.push(randtext);
 
@@ -84,8 +84,6 @@ function kill(arr) {
   array.value = 0;
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log(array)
-  console.log("hi")
-  document.querySelector("#choose").remove();
   console.log("hey")
   if( targets.num == arr.id) {
     targets.dead.value = true;
