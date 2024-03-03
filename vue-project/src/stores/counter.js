@@ -31,3 +31,5 @@ export const targets = reactive([
 ]);
 
 export let deadlist = reactive([])
+
+export let history = reactive([])
