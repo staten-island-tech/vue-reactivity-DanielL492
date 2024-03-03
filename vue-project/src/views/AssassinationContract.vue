@@ -21,12 +21,12 @@
 
 
 <script setup>
-import TargetCard from "@/components/TargetCard.vue"
+//import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 import {ref} from "vue"
 let showCard = ref(false);
 let array = ref([]);
-import {dead} from "@/stores/counter.js";
+import { deadlist} from "@/stores/counter.js";
 
 function givecontract(arr) {
   document.querySelector("#choose").remove();
@@ -47,14 +47,14 @@ function givecontract(arr) {
     let rand2 = getRandomInt(0, 18);
     let rand3 = getRandomInt(0, 18);
 
-    while (dead.includes(randtext)) {
+    while ( deadlist.includes(randtext)) {
       randtext = getRandomInt(0, 18);
     }
     array.value.push(arr[randtext]);
     history.push(randtext);
 
     while (history.includes(rand2)) {
-      while (dead.includes(rand2)) {
+      while ( deadlist.includes(rand2)) {
         rand2 = getRandomInt(0, 18);
       }
     }
@@ -62,7 +62,7 @@ function givecontract(arr) {
     history.push(rand2)
     array.value.push(arr[rand2]);
     while (history.includes(rand3)) {
-      while (dead.includes(rand3)) {
+      while ( deadlist.includes(rand3)) {
         rand3 = getRandomInt(0, 18);
       }
     }
@@ -93,8 +93,8 @@ function kill(button) {
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log(array)
   console.log("hey")
-  dead.push(selectedProduct(button))
-  console.log(dead);
+   deadlist.push(selectedProduct(button))
+  console.log( deadlist);
   let i = 0;
   for (i = 0; i <= targets.length; i++) {
     if ( targets.num == button.id) {
