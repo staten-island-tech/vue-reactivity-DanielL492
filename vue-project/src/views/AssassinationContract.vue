@@ -23,11 +23,10 @@
 <script setup>
 import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
-
-
 import {ref} from "vue"
 let showCard = ref(false);
 let array = ref([]);
+let dead = [];
 
 function givecontract(arr) {
   document.querySelector("#choose").remove();
@@ -48,14 +47,14 @@ function givecontract(arr) {
     let rand2 = getRandomInt(0, 18);
     let rand3 = getRandomInt(0, 18);
 
-    while (targets.dead == true) {
+    while (dead.includes(randtext)) {
       randtext = getRandomInt(0, 18);
     }
     array.value.push(arr[randtext]);
     history.push(randtext);
 
     while (history.includes(rand2)) {
-      while (targets.dead == true) {
+      while (dead.includes(rand2)) {
         rand2 = getRandomInt(0, 18);
       }
     }
@@ -63,7 +62,7 @@ function givecontract(arr) {
     history.push(rand2)
     array.value.push(arr[rand2]);
     while (history.includes(rand3)) {
-      while (targets.dead == true) {
+      while (dead.includes(rand3)) {
         rand3 = getRandomInt(0, 18);
       }
     }
@@ -79,13 +78,24 @@ pick(arr);
 
 } 
 
-function kill(arr) {
+function kill(button) {
+
+  function selectedProduct(arr){
+  let target = arr.target;
+  let parent = target.parentElement;//parent of "target"
+  let hi2 = Number(parent.id);
+  console.log(hi2)
+  return(hi2);
+}
+
   console.log(array);
   array.value = 0;
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log(array)
   console.log("hey")
-  if( targets.num == arr.id) {
+  dead.push(selectedProduct(button))
+  console.log(dead);
+  if ( targets.num == button.id) {
     targets.dead.value = true;
   }
 }
