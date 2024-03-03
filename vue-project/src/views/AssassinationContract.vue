@@ -21,7 +21,6 @@
 
 
 <script setup>
-//import TargetCard from "@/components/TargetCard.vue"
 import { targets } from "@/stores/counter.js";
 import {ref} from "vue"
 let showCard = ref(false);
