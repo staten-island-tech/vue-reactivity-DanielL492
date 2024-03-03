@@ -1,13 +1,12 @@
 <template>
   <div>
       <button id="choose" @click="givecontract(targets)" >Click to Receive Contract</button>
-      <div id="flexcontainer" ref="submit"></div>
 <!--     <div class="flexcontainer">
     <TargetCard v-for="target in targets"
     :key="target.name"
     :Target="target"/>
     </div> -->
-
+    <h3 id="hi"></h3>
     <div v-if="showCard == true">
       <div class="flexcontainer" v-for="item in array">
         <div class="card" :id="item.num">
@@ -23,14 +22,15 @@
 
 <script setup>
 import TargetCard from "@/components/TargetCard.vue"
-/* import { targets } from "@/stores/counter.js";
+import { targets } from "@/stores/counter.js";
 
 import {ref} from "vue"
-const showCard = ref(false);
-const array = ref([]);
+let showCard = ref(false);
+let array = ref([]);
 
 function givecontract(arr) {
 
+  array = ref([]);
   showCard.value = true;
   let history = [];
   let hi = 0;
@@ -73,15 +73,18 @@ function givecontract(arr) {
     history.splice(0, history.length);
     return (hi);
   }
-
 pick(arr);
 
 //showCard = false;
 
-} */
+} 
 
 function kill() {
-  
+  console.log(array);
+  array.value = 0;
+  document.querySelector("#hi").textContent = "You have assassinated that target.";
+  console.log(array)
+  console.log("hi")
 }
 
 
