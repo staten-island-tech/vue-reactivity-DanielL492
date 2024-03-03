@@ -29,3 +29,5 @@ export const targets = reactive([
   { name: "Sibrand", image: "image18.jpg", dead: ref(false), num: 17, },
   { name: "Abu'l Nuqoud", image: "image20.jpg", dead: ref(false), num: 18, }
 ]);
+
+export let dead = reactive([])

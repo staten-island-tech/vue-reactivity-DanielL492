@@ -26,7 +26,7 @@ import { targets } from "@/stores/counter.js";
 import {ref} from "vue"
 let showCard = ref(false);
 let array = ref([]);
-let dead = [];
+import {dead} from "@/stores/counter.js";
 
 function givecontract(arr) {
   document.querySelector("#choose").remove();
@@ -96,7 +96,7 @@ function kill(button) {
   dead.push(selectedProduct(button))
   console.log(dead);
   if ( targets.num == button.id) {
-    targets.dead.value = true;
+    targets.dead = true;
   }
 }
 
