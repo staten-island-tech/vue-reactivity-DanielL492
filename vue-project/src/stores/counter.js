@@ -3,7 +3,7 @@ import { reactive } from "vue";
 
 export const targets = reactive([
   { name: "Templar Grand Master Robert de Sablé", 
-    img: "../components/img/Robert.jpg", dead:  false, num: 0, },
+    img: "../components/img/Robert.jpeg", dead:  false, num: 0, },
   { name: "Al Mualim", 
     img: "../components/img/Mualim.jpeg", dead:  false, num: 1, },
   { name: "William of Montferrat", img: "../components/img/William.jpeg",
