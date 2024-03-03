@@ -42,14 +42,14 @@ function givecontract(arr) {
 }
 
   function pick() {
-    let randtext = getRandomInt(0, 18);
-    let rand2 = getRandomInt(0, 18);
-    let rand3 = getRandomInt(0, 18);
+    let randtext = getRandomInt(0, 13);
+    let rand2 = getRandomInt(0, 13);
+    let rand3 = getRandomInt(0, 13);
 
     while ( deadlist.includes(randtext)) {
       //for (i = 0; i < targets.length; i++) {
       //if ( targets[i].num == randtext) {
-      randtext = getRandomInt(0, 18)
+      randtext = getRandomInt(0, 13)
     //}}
       }
     array.value.push(arr[randtext]);
@@ -57,7 +57,7 @@ function givecontract(arr) {
 
     while (history.includes(rand2)) {
       if ( deadlist.includes(rand2)) {
-        rand2 = getRandomInt(0, 18);
+        rand2 = getRandomInt(0, 13);
       }
     }
 
@@ -65,7 +65,7 @@ function givecontract(arr) {
     array.value.push(arr[rand2]);
     while (history.includes(rand3)) {
       if ( deadlist.includes(rand3)) {
-        rand3 = getRandomInt(0, 18);
+        rand3 = getRandomInt(0, 13);
         console.log("Print this is already dead. Trying again")
       }
       console.log("Print this is already dead. Trying again2")
@@ -81,7 +81,7 @@ pick(arr);
 
 function kill(button) {
   showCard.value = false;
-  //document.querySelector("#choose").style.display = "";
+  document.querySelector("#choose").style.display = "";
   document.querySelector("#hi").style.display = "";
   history.length = 0;
   function selectedProduct(arr){
@@ -91,7 +91,7 @@ function kill(button) {
   return(hi2);
   }
   console.log(array);
-  array.value = 0;
+  array.value = [];
   document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   console.log("hey")
   deadlist.push(selectedProduct(button))
@@ -118,6 +118,31 @@ function kill(button) {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.card-img {
+width:150px;
+height:200px;
+align-items: center;
+}
+
+
+.card {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+flex-direction: column;
+background-color: rgba(110, 110, 241, 0.774);
+width: 22.5vw;
+height: 46vh;
+font-size: .65rem;
+border-radius: 15px;
+padding-top:3vh;
+padding-bottom: 3vh;
+margin: 7.5vh;
+box-shadow: 10px 10px;
+text-align: center;
 }
 
 h1 {
