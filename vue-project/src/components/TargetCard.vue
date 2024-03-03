@@ -3,7 +3,7 @@
    <h1>{{ Target.name }}</h1>
    <img :src="Target.img" alt="" class="card-img">
    <button @click="increment">Assassinate</button> 
-   <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead.value == true">
+   <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead == true">
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 <script setup>
 function increment(){
   props.Target.dead = true;
-  console.log(props.Target.dead.value)
+  console.log(props.Target.dead)
 }  
 const props = defineProps({
 Target: Object,
