@@ -13,6 +13,7 @@
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of' + item.name" class="card-img"/> <br>
+          <button @click="kill">Assassinate</button>
         </div>
       </div>
     </div>
@@ -22,7 +23,7 @@
 
 <script setup>
 import TargetCard from "@/components/TargetCard.vue"
-import { targets } from "@/stores/counter.js";
+/* import { targets } from "@/stores/counter.js";
 
 import {ref} from "vue"
 const showCard = ref(false);
@@ -70,15 +71,19 @@ function givecontract(arr) {
     history.push(rand3);
     array.value.push(arr[rand3]);
     history.splice(0, history.length);
-    arr.length = 0;
     return (hi);
   }
 
 pick(arr);
 
-showCard = false;
+//showCard = false;
 
+} */
+
+function kill() {
+  
 }
+
 
 /*function insertthing(arr) {
     console.log(arr);
