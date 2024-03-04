@@ -106,7 +106,7 @@ function kill(event) {
 .flexcontainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
   flex-wrap: wrap;
 }
