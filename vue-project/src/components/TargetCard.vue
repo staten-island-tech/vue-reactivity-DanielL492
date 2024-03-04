@@ -2,7 +2,7 @@
   <div class="card" :id="Target.name">
    <h1>{{ Target.name }}</h1>
    <img :src="Target.img" alt="" class="card-img">
-   <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead == true">
+   <img id="x" src="../components/img2/redx.jpeg" alt="" v-if="Target.dead == true">
   </div>
 </template>
 
