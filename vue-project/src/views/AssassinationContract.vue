@@ -1,9 +1,10 @@
 <template>
-  <div class="body">
+  <div class>  
     <button id="choose" @click="givecontract(targets)">Receive Contracts</button>
     <h3 id="hi">No Contracts Received Yet</h3>
     <div v-if="showCard == true">
-      <div class="flexcontainer" v-for="item in array" :key="item.num">
+      <div class="betterflexcontainer">
+      <div class="uselessflexcontainer" v-for="item in array" :key="item.num">
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of ' + item.name" class="card-img"/> <br>
@@ -11,6 +12,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -95,22 +97,6 @@ function kill(event) {
 
 <style scoped>
 
-
-/*.flexcontainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}*/
-
-.flexcontainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
 .card-img {
 width:150px;
 height:200px;
@@ -162,5 +148,13 @@ h1 {
   margin-top: 3%;
   text-align: center;
   border-radius: 10px;
+}
+
+.betterflexcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 5%;
 }
 </style>
