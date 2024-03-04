@@ -1,5 +1,1 @@
 @import './base.css';
-
-::backdrop {
-    background-image: "../components/img/red.jpeg";
-}
