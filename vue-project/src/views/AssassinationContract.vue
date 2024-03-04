@@ -3,7 +3,7 @@
     <button id="choose" @click="givecontract(targets)">Receive Contracts</button>
     <h3 id="hi">No Contracts Received Yet</h3>
     <div v-if="showCard == true">
-      <div class="flexcontainer" v-for="item in array" :key="item.num">
+      <div class="wlexcontainer" v-for="item in array" :key="item.num">
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of ' + item.name" class="card-img"/> <br>
@@ -123,7 +123,7 @@ flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
-background-color: rgba(110, 110, 241, 0.774);
+background-image: '../components/img/Map.jpeg';
 width: 22.5vw;
 height: 46vh;
 font-size: .65rem;
