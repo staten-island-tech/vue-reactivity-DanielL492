@@ -3,9 +3,9 @@ import { reactive } from "vue";
 
 export const targets = reactive([
   { name: "Templar Grand Master Robert de Sablé", 
-    img: "../stores/img/Robert.jpeg", dead:  false, num: 0, },
+    img: "https://static.wikia.nocookie.net/assassinscreed/images/d/db/AC1_Robert_render.png/revision/latest?cb=20140118214413", dead:  false, num: 0, },
   { name: "Al Mualim", 
-    img: "../stores/img/Mualim.jpeg", dead:  false, num: 1, },
+    img: "https://static.wikia.nocookie.net/assassinscreed/images/6/65/ACR_Al_Mualim.png/revision/latest?cb=20141027183648", dead:  false, num: 1, },
   { name: "William of Montferrat", img: "../stores/img/William.jpeg",
   dead:  false, num: 2, },
   { name: "Abu'l Nuqoud", img: "../stores/img/Nuqoud.jpeg",

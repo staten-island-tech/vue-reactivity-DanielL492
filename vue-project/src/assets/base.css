@@ -46,7 +46,6 @@
     --color-border-hover: var(--vt-c-divider-dark-1);
 
     --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
   }
 }
 
@@ -60,7 +59,7 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  color: black;
   background: var(--color-background);
   transition:
     color 0.5s,
@@ -82,5 +81,4 @@ body {
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

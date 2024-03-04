@@ -120,6 +120,7 @@ padding-bottom: 3vh;
 margin: 7.5vh;
 box-shadow: 10px 10px;
 text-align: center;
+text-emphasis-color: black;
 }
 
 h1 {
@@ -127,7 +128,7 @@ h1 {
 }
 
 #hi {
-  background-color: rgb(2, 34, 91);
+  background-color: rgba(6, 65, 167, 0.863);
   text-align: center;
   margin-left: 25%;
   margin-right: 25%;
