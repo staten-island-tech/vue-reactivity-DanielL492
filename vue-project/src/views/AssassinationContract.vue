@@ -1,11 +1,6 @@
-<template>
+<!-- <template>
   <div>
       <button id="choose" @click="givecontract(targets)" >Click to Receive Contract</button>
-<!--     <div class="flexcontainer">
-    <TargetCard v-for="target in targets"
-    :key="target.name"
-    :Target="target"/>
-    </div> -->
     <h3 id="hi"></h3>
     <div v-if="showCard == true">
       <div class="flexcontainer" v-for="item in array">
@@ -17,10 +12,10 @@
       </div>
     </div>
   </div>
-</template>
+</template> -->
 
 
-<script setup>
+<!-- <script setup>
 import { targets } from "@/stores/counter.js";
 import {ref} from "vue"
 let showCard = ref(false);
@@ -50,25 +45,28 @@ function givecontract(arr) {
       //for (i = 0; i < targets.length; i++) {
       //if ( targets[i].num == randtext) {
       randtext = getRandomInt(0, 13)
+      console.log("Print this is already dead. Trying again")
     //}}
       }
     array.value.push(arr[randtext]);
     history.push(randtext);
 
     while (history.includes(rand2)) {
-      if ( deadlist.includes(rand2)) {
+      while ( deadlist.includes(rand2)) {
         rand2 = getRandomInt(0, 13);
+        console.log("Print this is already dead. Trying again")
       }
+      console.log("Print this is already used. Trying again")
     }
 
     history.push(rand2)
     array.value.push(arr[rand2]);
     while (history.includes(rand3)) {
-      if ( deadlist.includes(rand3)) {
+      while ( deadlist.includes(rand3)) {
         rand3 = getRandomInt(0, 13);
         console.log("Print this is already dead. Trying again")
       }
-      console.log("Print this is already dead. Trying again2")
+      console.log("Print this is already used. Trying again")
     }
     history.push(rand3);
     console.log(history);
@@ -78,6 +76,7 @@ function givecontract(arr) {
   }
 pick(arr);
 } 
+
 
 function kill(button) {
   showCard.value = false;
@@ -101,7 +100,92 @@ function kill(button) {
     targets[i].dead = true;
     }}
   }
+</script> -->
+
+<template>
+  <div>
+    <button id="choose" @click="givecontract(targets)">Click to Receive Contract</button>
+    <h3 id="hi"></h3>
+    <div v-if="showCard == true">
+      <div class="flexcontainer" v-for="item in array" :key="item.num">
+        <div class="card" :id="item.num">
+          <h3 class="name">{{ item.name }}</h3>
+          <img :src="item.img" :alt="'Image of ' + item.name" class="card-img"/> <br>
+          <button :id="item.num" @click="kill">Assassinate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { targets } from "@/stores/counter.js";
+import { ref } from "vue";
+import { deadlist } from "@/stores/counter.js";
+import { history } from "@/stores/counter.js";
+
+let showCard = ref(false);
+let array = ref([]);
+
+function givecontract(arr) {
+  showCard.value = true;
+  document.querySelector("#choose").style.display = "none";
+  document.querySelector("#hi").style.display = "none";
+  pick(arr);
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function pick(arr) {
+  array.value = [];
+  history.length = 0;
+
+  function getRandomNumber() {
+    let index = 0;
+    while (deadlist.includes(index) || history.includes(index)) {
+      index = getRandomInt(0, arr.length);
+      console.log("nope")
+    };
+    return index;
+  }
+
+  for (let i = 0; i < 3; i++) {
+    const randIndex = getRandomNumber();
+    array.value.push(arr[randIndex]);
+    history.push(randIndex);
+  }
+}
+
+function kill(event) {
+  showCard.value = false;
+  document.querySelector("#choose").style.display = "";
+  document.querySelector("#hi").style.display = "";
+  array.value = [];
+
+  function selectedProduct() {
+    const target = event.target;
+    const parent = target.parentElement; // parent of "target"
+    return Number(parent.id);
+  }
+
+  const selectedTarget = selectedProduct();
+  console.log(array);
+  document.querySelector("#hi").textContent =
+    "You have assassinated that target. Go to your target list to check remaining targets.";
+  deadlist.push(selectedTarget);
+
+  for (let i = 0; i < targets.length; i++) {
+    if (targets[i].num === selectedTarget) {
+      targets[i].dead = true;
+    }
+  }
+}
 </script>
+
 
 <style scoped>
 
