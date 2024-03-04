@@ -114,7 +114,7 @@ flex-direction: column;
 background-image: '../components/img/Map.jpeg';
 width: 22.5vw;
 height: 46vh;
-font-size: .65rem;
+font-size: 1rem;
 border-radius: 15px;
 padding-top:3vh;
 padding-bottom: 3vh;

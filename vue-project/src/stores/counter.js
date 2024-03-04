@@ -2,7 +2,7 @@ import { ref } from "vue";
 import { reactive } from "vue";
 
 export const targets = reactive([
-  { name: "Templar Grand Master Robert de Sablé", 
+  { name: "Robert de Sablé", 
     img: "../public/img/Robert.jpeg", dead:  false, num: 0, },
   { name: "Al Mualim", 
     img: "../public/img/Mualim.jpeg", dead:  false, num: 1, },

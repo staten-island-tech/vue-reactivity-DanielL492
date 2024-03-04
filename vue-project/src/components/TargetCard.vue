@@ -46,8 +46,9 @@ text-align: center;
 #x {
   z-index: 999999;
   align-items: center;
-  width:50px;
-  height:100px;
+  width:75px;
+  height:75px;
+  border-radius: 5px;
 }
 
 </style>
