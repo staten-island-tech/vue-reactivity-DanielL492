@@ -2,17 +2,12 @@
   <div class="card" :id="Target.name">
    <h1>{{ Target.name }}</h1>
    <img :src="Target.img" alt="" class="card-img">
-  <!--  <button @click="increment">Assassinate</button>  -->
    <img id="x" src="../components/img/redx.jpeg" alt="" v-if="Target.dead == true">
   </div>
 </template>
 
 
 <script setup>
-/*function increment(){
-  props.Target.dead = true;
-  console.log(props.Target.dead)
-}  */
 const props = defineProps({
 Target: Object,
 });
@@ -20,10 +15,6 @@ Target: Object,
 
 
 <style scoped>
-
-img {
-  z-index: 9999999999999;
-}
 
 .card-img {
 width:150px;
@@ -51,6 +42,8 @@ text-align: center;
 }
 
 #x {
+  z-index: 9999999999999;
+  align-items: center;
   width:50px;
   height:100px;
 }

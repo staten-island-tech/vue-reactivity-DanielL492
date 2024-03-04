@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <button id="choose" @click="givecontract(targets)">Receive Contracts</button>
-    <h3 id="hi"></h3>
+    <h3 id="hi">No Contracts Received Yet</h3>
     <div v-if="showCard == true">
       <div class="flexcontainer" v-for="item in array" :key="item.num">
         <div class="card" :id="item.num">
