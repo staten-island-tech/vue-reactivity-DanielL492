@@ -98,7 +98,7 @@ function kill(event) {
 <style scoped>
 
 .card-img {
-width:150px;
+width:125px;
 height:200px;
 align-items: center;
 border-radius: 10px;
@@ -122,7 +122,7 @@ margin: 7.5vh;
 box-shadow: 10px 10px;
 text-align: center;
 text-emphasis-color: black;
-background-color: rgba(103, 158, 248, 0.781);
+background-color: rgba(248, 205, 103, 0.781);
 }
 
 h1 {
@@ -163,6 +163,6 @@ h1 {
 
 .button2 {
   background-color: black;
-  text-emphasis-color: red;
+  color: red;
 }
 </style>

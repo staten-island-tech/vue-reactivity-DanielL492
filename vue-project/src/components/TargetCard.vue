@@ -17,7 +17,7 @@ Target: Object,
 <style scoped>
 
 .card-img {
-width:150px;
+width:125px;
 height:225px;
 align-items: center;
 border-radius: 15px;
