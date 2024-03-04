@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button id="choose" @click="givecontract(targets)">Click to Receive Contract</button>
+  <div class="body">
+    <button id="choose" @click="givecontract(targets)">Receive Contracts</button>
     <h3 id="hi"></h3>
     <div v-if="showCard == true">
       <div class="flexcontainer" v-for="item in array" :key="item.num">
@@ -49,7 +49,7 @@ function pick(arr) {
       }
       else {
         document.querySelector("#hi").style.display = "";
-        document.querySelector("#hi").textContent = "You have reached your limit, assassinating any more targets will cause desynchronization.";
+        document.querySelector("#hi").textContent = "You have reached your limit, assassinating any more targets will cause divergence from the timeline and desynchronization will occur.";
         index = [-1];
         break
       }
@@ -137,5 +137,29 @@ text-align: center;
 
 h1 {
   color: red;
+}
+
+#hi {
+  background-color: rgb(2, 34, 91);
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 12.5%; 
+  padding-left: 10%, 10%;
+  padding-right: 10%;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+#choose {
+  padding-left: 2%;
+  padding-right:2%;
+  padding-top: .5%;
+  padding-bottom: .5%;
+  background-color: brown;
+  margin-left: 5%;
+  margin-top: 3%;
+  text-align: center;
+  border-radius: 10px;
 }
 </style>
