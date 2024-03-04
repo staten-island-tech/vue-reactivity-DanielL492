@@ -1,5 +1,5 @@
 <template>
-  <div class>  
+  <div class="wassup">  
     <button id="choose" @click="givecontract(targets)">Receive Contracts</button>
     <h3 id="hi">No Contracts Received Yet</h3>
     <div v-if="showCard == true">
@@ -157,5 +157,9 @@ h1 {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-top: 5%;
+}
+
+.wassup {
+  background-image: "../public/img2/Acback.jpeg";
 }
 </style>
