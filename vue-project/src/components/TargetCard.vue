@@ -2,7 +2,7 @@
   <div class="card" :id="Target.name">
    <h1>{{ Target.name }}</h1>
    <img :src="Target.img" alt="" class="card-img">
-   <img id="x" src="/img2/redx2.jpeg" alt="" v-if="Target.dead == true">
+   <img id="x" src="/img2/Redxfr.png" alt="" v-if="Target.dead == true">
   </div>
 </template>
 
@@ -30,7 +30,7 @@ flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
-background-color: rgba(255, 255, 129, 0.898);
+background-color: rgba(248, 248, 225, 0.898);
 width: 22.5vw;
 height: 46vh;
 font-size: .65rem;
@@ -40,6 +40,7 @@ padding-bottom: 3vh;
 margin: 7.5vh;
 box-shadow: 10px 10px;
 text-align: center;
+
 }
 
 #x {

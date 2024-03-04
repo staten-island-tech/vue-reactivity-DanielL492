@@ -17,7 +17,7 @@ export const targets = reactive([
   { name: "Sibrand", img: "../public/img/Sibrand.jpeg", 
   dead:  false, num: 6, },
   { name: "Tamir", img: "../public/img/Tamir.jpeg", dead:  false, num: 7, },
-  { name: "Garnier de Naplouse", img: "../public/img/Nalpouse.jpeg", dead:  false, num: 8, },
+  { name: "Garnier de Naplouse", img: "../public/img/Naplouse.jpeg", dead:  false, num: 8, },
   { name: "Talal", img: "../public/img/Talal.jpeg", dead:  false, num: 9, },
   { name: "Abbas Sofian", img: "../public/img/Abbas.jpeg", dead:  false, num: 10, },
   { name: "Moloch", img: "../public/img/Moloch.jpeg", dead:  false, num: 11, },

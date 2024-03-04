@@ -8,7 +8,7 @@
         <div class="card" :id="item.num">
           <h3 class="name">{{ item.name }}</h3>
           <img :src="item.img" :alt="'Image of ' + item.name" class="card-img"/> <br>
-          <button :id="item.num" @click="kill">Assassinate</button>
+          <button class="button2" :id="item.num" @click="kill">Assassinate</button>
         </div>
       </div>
     </div>
@@ -101,6 +101,7 @@ function kill(event) {
 width:150px;
 height:200px;
 align-items: center;
+border-radius: 10px;
 }
 
 
@@ -121,6 +122,7 @@ margin: 7.5vh;
 box-shadow: 10px 10px;
 text-align: center;
 text-emphasis-color: black;
+background-color: rgba(103, 158, 248, 0.781);
 }
 
 h1 {
@@ -159,7 +161,8 @@ h1 {
   margin-top: 5%;
 }
 
-.wassup {
-  background-image: "../public/img2/Acback.jpeg";
+.button2 {
+  background-color: black;
+  text-emphasis-color: red;
 }
 </style>
