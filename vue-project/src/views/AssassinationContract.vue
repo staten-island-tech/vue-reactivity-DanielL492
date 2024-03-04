@@ -43,18 +43,29 @@ function pick(arr) {
   function getRandomNumber() {
     let index = 0;
     while (deadlist.includes(index) || history.includes(index)) {
-      index = getRandomInt(0, arr.length);
-      console.log("nope")
+      if (deadlist.length <= 11) {
+        index = getRandomInt(0, arr.length);
+        console.log("nope")
+      }
+      else {
+        document.querySelector("#hi").style.display = "";
+        document.querySelector("#hi").textContent = "You have reached your limit, assassinating any more targets will cause desynchronization.";
+        index = [-1];
+        break
+      }
     };
     return index;
   }
 
+  const hi = getRandomNumber()
+
   for (let i = 0; i < 3; i++) {
-    const randIndex = getRandomNumber();
-    array.value.push(arr[randIndex]);
-    history.push(randIndex);
+      const randIndex = getRandomNumber();
+      array.value.push(arr[randIndex]);
+      history.push(randIndex);
+
+    }
   }
-}
 
 function kill(event) {
   showCard.value = false;
@@ -70,8 +81,7 @@ function kill(event) {
 
   const selectedTarget = selectedProduct();
   console.log(array);
-  document.querySelector("#hi").textContent =
-    "You have assassinated that target. Go to your target list to check remaining targets.";
+  document.querySelector("#hi").textContent = "You have assassinated that target. Go to your target list to check remaining targets.";
   deadlist.push(selectedTarget);
 
   for (let i = 0; i < targets.length; i++) {

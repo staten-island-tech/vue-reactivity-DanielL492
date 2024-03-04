@@ -38,7 +38,7 @@ flex-wrap: wrap;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
-background-color: rgba(110, 110, 241, 0.774);
+background-image: '../components/img/Map.jpeg';
 width: 22.5vw;
 height: 46vh;
 font-size: .65rem;
