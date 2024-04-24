@@ -45,7 +45,7 @@ function pick(arr) {
   function getRandomNumber() {
     let index = 0;
     while (deadlist.includes(index) || history.includes(index)) {
-      if (deadlist.length <= 11) {
+      if (deadlist.length <= 10) {
         index = getRandomInt(0, arr.length);
         console.log("nope")
       }
